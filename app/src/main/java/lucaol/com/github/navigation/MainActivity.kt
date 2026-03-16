@@ -8,11 +8,14 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import lucaol.com.github.navigation.screens.LoginScreen
 import lucaol.com.github.navigation.screens.MenuScreen
 import lucaol.com.github.navigation.screens.PedidosScreen
 import lucaol.com.github.navigation.screens.PerfilScreen
+import lucaol.com.github.navigation.ui.theme.NavigationTheme
 
 
 class MainActivity : ComponentActivity() {
@@ -20,9 +23,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            navigationTheme {
+            NavigationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    LoginScreen(modifier = Modifier.padding(innerPadding))
+
                     val navController = rememberNavController()
 
                     NavHost(
@@ -30,16 +33,16 @@ class MainActivity : ComponentActivity() {
                         startDestination = "login",
                     ) {
                         composable(route = "login") {
-                            LoginScreen(modifier = Modifier.padding(innerPadding))
+                            LoginScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "menu") {
-                            MenuScreen(modifier = Modifier.padding(innerPadding))
+                            MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "pedidos") {
-                            PedidosScreen(modifier = Modifier.padding(innerPadding))
+                            PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "perfil") {
-                            PerfilScreen(modifier = Modifier.padding(innerPadding))
+                            PerfilScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                     }
                 }
@@ -47,5 +50,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
 
 
