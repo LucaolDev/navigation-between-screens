@@ -1,3 +1,14 @@
+📱 Navigation Between Screens
+Projeto Android desenvolvido em Kotlin com foco em demonstrar a navegação entre múltiplas telas de um aplicativo mobile.
+Sobre o projeto
+O Navigation Between Screens é um app de estudo que explora como implementar a transição e comunicação entre diferentes telas (Activities/Fragments) no ecossistema Android. O projeto segue a estrutura padrão do Android Studio e serve como referência prática para quem está aprendendo a construir fluxos de navegação em aplicativos nativos.
+Tecnologias utilizadas
+
+Kotlin — linguagem principal do projeto (100%)
+Android SDK — plataforma de desenvolvimento
+Gradle (Kotlin DSL) — gerenciamento de build com build.gradle.kts
+
+
 <table>
   <tr>
     <td><img width="540" height="1200" alt="Screenshot_20260316_153944" src="https://github.com/user-attachments/assets/cbe47f6f-b606-4d09-8d7b-efe918453e89" /></td>
